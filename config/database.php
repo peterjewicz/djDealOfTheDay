@@ -39,16 +39,17 @@ return [
             'prefix' => '',
         ],
 
-        'mysql'  => [
-            'driver'    => 'mysql',
-            'host'      => env('DB_HOST', 'us-cdbr-iron-east-03.cleardb.net'),
-            'database'  => env('DB_DATABASE', 'heroku_0da649ffb025375'),
-            'username'  => env('DB_USERNAME', 'b084e6a5368792'),
-            'password'  => env('DB_PASSWORD', 'ed51bce5'),
-            'charset'   => 'utf8',
+        'mysql' => [
+           'driver' => 'mysql',
+            'host'     => parse_url(getenv("CLEARDB_DATABASE_URL"))["host"],
+            'database' => substr(parse_url(getenv("CLEARDB_DATABASE_URL"))["path"], 1),
+            'username' => parse_url(getenv("CLEARDB_DATABASE_URL"))["user"],
+            'password' => parse_url(getenv("CLEARDB_DATABASE_URL"))["pass"],
+            'charset' => 'utf8',
             'collation' => 'utf8_unicode_ci',
-            'prefix'    => '',
-            'strict'    => false,
+            'prefix' => '',
+            'strict' => false,
+            'engine' => null,
         ],
 
         'pgsql' => [
