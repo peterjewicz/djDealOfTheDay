@@ -1,16 +1,37 @@
 @import 'grid';
 @import 'fontAwesome/scss/font-awesome';
+@import 'scroll';
 
 @import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600');
+@import url('https://fonts.googleapis.com/css?family=Dosis:400,500,600');
 
 
-$blue: #5d95bd;
+@font-face {
+    font-family: bushcraft;
+    // src: url(../fonts/adampro.otf);
+    src: url(../fonts/Mohave-Bold.otf);
+}
+
+// $blue: #347bad;
+$blue: #f44747; // but it's really red lol right?????
+$black: #454545;
+$green: #00ffae;
 
 body{
     font-family: 'Poppins', sans-serif;
     font-size: 14px;
     font-weight: 300;
+    background-color: #ffffff;
+background-image: url(https://www.transparenttextures.com/patterns/concrete-wall.png);
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
+
+
+.greenText{
+    color: $green;
+    border-bottom: 1px solid white;
+}
+
 
 @media(min-width: 767px){
     body{
@@ -20,8 +41,12 @@ body{
 
 h1,h2,h3,h4{
     margin: 0;
+    // font-family: 'Dosis', sans-serif;
+     font-family: bushcraft;
 }
-h1{font-weight: 600;}
+h1{
+    font-weight: 600;
+}
 h2,h3,h4{
     font-weight: 300;
 }
@@ -60,9 +85,12 @@ h4{font-size: 1.5em;}
     .button{
         border: 1px solid white;
         font-size: 1.25em;
+        position:relative;
+        top: 25px;
+        margin: 0 10px;
     }
     .downWard{
-        position: fixed;
+        position: absolute;
         bottom: 15px;
         left: 0px;
         text-align: center;
@@ -75,11 +103,131 @@ h4{font-size: 1.5em;}
     }
 }
 
+#itemWrapper{
+    height: 100vh;
+
+    .slider{
+        // margin: auto;
+        // position: absolute;
+        // top: 0; left: 0; bottom: 0; right: 0;
+    }
+
+    .item{
+        margin: 0 auto;
+        position:relative;
+        top: 12.5%;
+        width: 75%;
+        max-width: 920px;
+        background-color: #454545;
+        background-image: url(../images/SpoonGraphics-Topographic-Map-4.png);
+        /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+        height: 75%;
+
+        .productImage{
+            // display:table;
+            height: 100%;
+            position:relative;
+
+            .imagesWrapper{
+                // display:table-cell;
+                margin-top: 25%;
+            }
+        }
 
 
+        .productContent{
+            .divider{
+                    height: 3px;
+                    width: 100px;
+                    background-color: white;
+                    margin-bottom: 10px;
+            }
+            height: 100%;
+            display:table;
+            color:white;
+            padding-left: 15px;
+            padding-right: 15px;
+            /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#8cc1e9+1,347bad+100 */
+            // background: $blue; /* Old browsers */
+            // background: -moz-radial-gradient(center, ellipse cover, #8cc1e9 1%, #347bad 100%); /* FF3.6-15 */
+            // background: -webkit-radial-gradient(center, ellipse cover, #8cc1e9 1%,#347bad 100%); /* Chrome10-25,Safari5.1-6 */
+            // background: radial-gradient(ellipse at center, #8cc1e9 1%,#347bad 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8cc1e9', endColorstr='#347bad',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+            /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f67979+0,f44747+100 */
+            background: $blue; /* Old browsers */
+            background: -moz-radial-gradient(center, ellipse cover, #f67979 0%, #f44747 100%); /* FF3.6-15 */
+            background: -webkit-radial-gradient(center, ellipse cover, #f67979 0%,#f44747 100%); /* Chrome10-25,Safari5.1-6 */
+            background: radial-gradient(ellipse at center, #f67979 0%,#f44747 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f67979', endColorstr='#f44747',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+            .scrollerShadow{
+                // box-shadow:        inset  0  8px 8px -8px $black,
+                //                    inset  0 -8px 8px -8px $black;
+                outline: 1px solid #f67979;
+                border: 1px solid $blue;
+            }
+            .textWrapper{
+                color:white;
+                max-height: 150px;
+                overflow: scroll;
+                padding: 5px;
+                p{
+                    margin-top: 0px;
+                }
+            }
+            .button{
+                border: 1px solid white;
+                font-size: 1em;
+                position:relative;
+                top: 25px;
+            }
+            .productContentInner{
+                display: table-cell;
+                vertical-align: middle;
+                position:relative;
+                bottom: 25px;
+                .pricing{
+                    margin-top: 10px;
+                }
+            }
+        }
+    }
 
+}
+
+@import 'login';
+
+//slick overriders
+.slick-prev, .slick-next{
+    display:none !important;
+}
+
+.slick-dots li button:before{
+    font-size: 36px;
+    color:white !important;
+}
 @keyframes blink {
     0%   {opacity: 1;}
     50%  {opacity: 0;}
     100% {opacity: 1;}
+}
+
+
+
+//mobile styles cause Im too lazy to do it right
+
+@media(max-width: 767px){
+    #itemWrapper{
+        .item{
+            top: 35px;
+            .productImage{
+                height: 50%;
+                .imagesWrapper{
+                    margin-top: 10px;
+                }
+            }
+            .productContent{
+                height: 70%;
+            }
+        }
+    }
 }

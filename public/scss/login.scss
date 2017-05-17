@@ -1,0 +1,52 @@
+.loginWrapper{
+    background-image: url('../images/mainBg.jpg');
+    background-size: cover;
+    background: rgba(247,212,212,0.7);
+    background: -moz-linear-gradient(45deg, rgba(247,212,212,0.7) 0%, rgba(244,71,71,0.7) 78%, rgba(244,71,71,0.7) 100%);
+    background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(247,212,212,0.7)), color-stop(78%, rgba(244,71,71,0.7)), color-stop(100%, rgba(244,71,71,0.7)));
+    background: -webkit-linear-gradient(45deg, rgba(247,212,212,0.7) 0%, rgba(244,71,71,0.7) 78%, rgba(244,71,71,0.7) 100%);
+    background: -o-linear-gradient(45deg, rgba(247,212,212,0.7) 0%, rgba(244,71,71,0.7) 78%, rgba(244,71,71,0.7) 100%);
+    background: -ms-linear-gradient(45deg, rgba(247,212,212,0.7) 0%, rgba(244,71,71,0.7) 78%, rgba(244,71,71,0.7) 100%);
+    background: linear-gradient(45deg, rgba(247,212,212,0.7) 0%, rgba(244,71,71,0.7) 78%, rgba(244,71,71,0.7) 100%);
+    width: 100%;
+    height: 100vh;
+    .login{
+        width: 320px;
+        height: 200px;
+        margin: auto;
+        position: absolute;
+        top: 0; left: 0; bottom: 0; right: 0;
+        background-color: white;
+        .loginHeader{
+            padding: 10px 0;
+            color:white;
+            h4{
+                margin: 0;
+            }
+            text-align: center;
+            background-color: $blue;
+        }
+        input{
+            width: 295px;
+            display:block;
+            margin: 10px auto;
+        }
+        input.text{
+            height: 35px;
+        }
+        input.submitButton{
+            border:none;
+            height: 35px;
+            font-size: 18px;
+            border: 1px solid $blue;
+            transition: all .5s;
+            background-color: transparent;
+
+            &:hover{
+                background-color: $blue;
+                color:white;
+                cursor: pointer;
+            }
+        }
+    }
+}

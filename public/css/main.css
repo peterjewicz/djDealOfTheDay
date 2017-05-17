@@ -1,5 +1,6 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600");
+@import url("https://fonts.googleapis.com/css?family=Dosis:400,500,600");
 body, html { margin: 0; }
 
 .row { max-width: 1280px; margin: 20px auto; clear: both; }
@@ -1523,11 +1524,83 @@ body, html { margin: 0; }
 
 .sr-only-focusable:active, .sr-only-focusable:focus { position: static; width: auto; height: auto; margin: 0; overflow: visible; clip: auto; }
 
-body { font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 300; }
+/*************** SCROLLBAR BASE CSS ***************/
+.scroll-wrapper { overflow: hidden !important; padding: 0 !important; position: relative; }
+
+.scroll-wrapper > .scroll-content { border: none !important; box-sizing: content-box !important; height: auto; left: 0; margin: 0; max-height: none; max-width: none !important; overflow: scroll !important; padding: 0; position: relative !important; top: 0; width: auto !important; }
+
+.scroll-wrapper > .scroll-content::-webkit-scrollbar { height: 0; width: 0; }
+
+.scroll-element { display: none; }
+
+.scroll-element, .scroll-element div { box-sizing: content-box; }
+
+.scroll-element.scroll-x.scroll-scrollx_visible, .scroll-element.scroll-y.scroll-scrolly_visible { display: block; }
+
+.scroll-element .scroll-bar, .scroll-element .scroll-arrow { cursor: default; }
+
+.scroll-textarea { border: 1px solid #cccccc; border-top-color: #999999; }
+
+.scroll-textarea > .scroll-content { overflow: hidden !important; }
+
+.scroll-textarea > .scroll-content > textarea { border: none !important; box-sizing: border-box; height: 100% !important; margin: 0; max-height: none !important; max-width: none !important; overflow: scroll !important; outline: none; padding: 2px; position: relative !important; top: 0; width: 100% !important; }
+
+.scroll-textarea > .scroll-content > textarea::-webkit-scrollbar { height: 0; width: 0; }
+
+/*************** SCROLLBAR RAIL ***************/
+.scrollbar-rail > .scroll-element, .scrollbar-rail > .scroll-element div { border: none; margin: 0; overflow: hidden; padding: 0; position: absolute; z-index: 10; }
+
+.scrollbar-rail > .scroll-element { background-color: transparent; }
+
+.scrollbar-rail > .scroll-element div { display: block; height: 100%; left: 0; top: 0; width: 100%; }
+
+.scrollbar-rail > .scroll-element .scroll-element_size { background-color: #999; background-color: rgba(0, 0, 0, 0.3); }
+
+.scrollbar-rail > .scroll-element .scroll-element_outer:hover .scroll-element_size { background-color: #666; background-color: rgba(0, 0, 0, 0.5); }
+
+.scrollbar-rail > .scroll-element.scroll-x { bottom: 0; height: 12px; left: 0; min-width: 100%; padding: 3px 0 2px; width: 100%; }
+
+.scrollbar-rail > .scroll-element.scroll-y { height: 100%; min-height: 100%; padding: 0 2px 0 3px; right: 0; top: 0; width: 12px; }
+
+.scrollbar-rail > .scroll-element .scroll-bar { background-color: white; -webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px; box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); }
+
+.scrollbar-rail > .scroll-element .scroll-element_outer:hover .scroll-bar { box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6); }
+
+/* scrollbar height/width & offset from container borders */
+.scrollbar-rail > .scroll-content.scroll-scrolly_visible { left: -17px; margin-left: 17px; }
+
+.scrollbar-rail > .scroll-content.scroll-scrollx_visible { margin-top: 17px; top: -17px; }
+
+.scrollbar-rail > .scroll-element.scroll-x .scroll-bar { height: 10px; min-width: 10px; top: 1px; }
+
+.scrollbar-rail > .scroll-element.scroll-y .scroll-bar { left: 1px; min-height: 10px; width: 10px; }
+
+.scrollbar-rail > .scroll-element.scroll-x .scroll-element_outer { height: 15px; left: 5px; }
+
+.scrollbar-rail > .scroll-element.scroll-x .scroll-element_size { height: 2px; left: -10px; top: 5px; }
+
+.scrollbar-rail > .scroll-element.scroll-y .scroll-element_outer { top: 5px; width: 15px; }
+
+.scrollbar-rail > .scroll-element.scroll-y .scroll-element_size { left: 5px; top: -10px; width: 2px; }
+
+/* update scrollbar offset if both scrolls are visible */
+.scrollbar-rail > .scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_size { left: -25px; }
+
+.scrollbar-rail > .scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_size { top: -25px; }
+
+.scrollbar-rail > .scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_track { left: -25px; }
+
+.scrollbar-rail > .scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_track { top: -25px; }
+
+@font-face { font-family: bushcraft; src: url(../fonts/Mohave-Bold.otf); }
+
+body { font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 300; background-color: #ffffff; background-image: url(https://www.transparenttextures.com/patterns/concrete-wall.png); /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */ }
+
+.greenText { color: #00ffae; border-bottom: 1px solid white; }
 
 @media (min-width: 767px) { body { font-size: 16px; } }
 
-h1, h2, h3, h4 { margin: 0; }
+h1, h2, h3, h4 { margin: 0; font-family: bushcraft; }
 
 h1 { font-weight: 600; }
 
@@ -1541,7 +1614,7 @@ h3 { font-size: 2.25em; }
 
 h4 { font-size: 1.5em; }
 
-.button { padding: 10px 20px; color: white; text-decoration: none; transition: all .5s; background: linear-gradient(to left, transparent 50%, #5d95bd 50%); background-size: 200% 100%; background-position: right bottom; }
+.button { padding: 10px 20px; color: white; text-decoration: none; transition: all .5s; background: linear-gradient(to left, transparent 50%, #f44747 50%); background-size: 200% 100%; background-position: right bottom; }
 
 .button:hover { background-position: left bottom; }
 
@@ -1549,14 +1622,63 @@ h4 { font-size: 1.5em; }
 
 #header .headerContent { display: table-cell; vertical-align: middle; text-align: center; }
 
-#header .button { border: 1px solid white; font-size: 1.25em; }
+#header .button { border: 1px solid white; font-size: 1.25em; position: relative; top: 25px; margin: 0 10px; }
 
-#header .downWard { position: fixed; bottom: 15px; left: 0px; text-align: center; font-size: 36px; width: 100%; animation: blink 3s infinite; }
+#header .downWard { position: absolute; bottom: 15px; left: 0px; text-align: center; font-size: 36px; width: 100%; animation: blink 3s infinite; }
 
 #header .downWard h4 { font-size: 16px; }
+
+#itemWrapper { height: 100vh; }
+
+#itemWrapper .item { margin: 0 auto; position: relative; top: 12.5%; width: 75%; max-width: 920px; background-color: #454545; background-image: url(../images/SpoonGraphics-Topographic-Map-4.png); /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */ height: 75%; }
+
+#itemWrapper .item .productImage { height: 100%; position: relative; }
+
+#itemWrapper .item .productImage .imagesWrapper { margin-top: 25%; }
+
+#itemWrapper .item .productContent { height: 100%; display: table; color: white; padding-left: 15px; padding-right: 15px; /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#8cc1e9+1,347bad+100 */ /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f67979+0,f44747+100 */ background: #f44747; /* Old browsers */ background: -moz-radial-gradient(center, ellipse cover, #f67979 0%, #f44747 100%); /* FF3.6-15 */ background: -webkit-radial-gradient(center, ellipse cover, #f67979 0%, #f44747 100%); /* Chrome10-25,Safari5.1-6 */ background: radial-gradient(ellipse at center, #f67979 0%, #f44747 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f67979', endColorstr='#f44747',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */ }
+
+#itemWrapper .item .productContent .divider { height: 3px; width: 100px; background-color: white; margin-bottom: 10px; }
+
+#itemWrapper .item .productContent .scrollerShadow { outline: 1px solid #f67979; border: 1px solid #f44747; }
+
+#itemWrapper .item .productContent .textWrapper { color: white; max-height: 150px; overflow: scroll; padding: 5px; }
+
+#itemWrapper .item .productContent .textWrapper p { margin-top: 0px; }
+
+#itemWrapper .item .productContent .button { border: 1px solid white; font-size: 1em; position: relative; top: 25px; }
+
+#itemWrapper .item .productContent .productContentInner { display: table-cell; vertical-align: middle; position: relative; bottom: 25px; }
+
+#itemWrapper .item .productContent .productContentInner .pricing { margin-top: 10px; }
+
+.loginWrapper { background-image: url("../images/mainBg.jpg"); background-size: cover; background: rgba(247, 212, 212, 0.7); background: -moz-linear-gradient(45deg, rgba(247, 212, 212, 0.7) 0%, rgba(244, 71, 71, 0.7) 78%, rgba(244, 71, 71, 0.7) 100%); background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(247, 212, 212, 0.7)), color-stop(78%, rgba(244, 71, 71, 0.7)), color-stop(100%, rgba(244, 71, 71, 0.7))); background: -webkit-linear-gradient(45deg, rgba(247, 212, 212, 0.7) 0%, rgba(244, 71, 71, 0.7) 78%, rgba(244, 71, 71, 0.7) 100%); background: -o-linear-gradient(45deg, rgba(247, 212, 212, 0.7) 0%, rgba(244, 71, 71, 0.7) 78%, rgba(244, 71, 71, 0.7) 100%); background: -ms-linear-gradient(45deg, rgba(247, 212, 212, 0.7) 0%, rgba(244, 71, 71, 0.7) 78%, rgba(244, 71, 71, 0.7) 100%); background: linear-gradient(45deg, rgba(247, 212, 212, 0.7) 0%, rgba(244, 71, 71, 0.7) 78%, rgba(244, 71, 71, 0.7) 100%); width: 100%; height: 100vh; }
+
+.loginWrapper .login { width: 320px; height: 200px; margin: auto; position: absolute; top: 0; left: 0; bottom: 0; right: 0; background-color: white; }
+
+.loginWrapper .login .loginHeader { padding: 10px 0; color: white; text-align: center; background-color: #f44747; }
+
+.loginWrapper .login .loginHeader h4 { margin: 0; }
+
+.loginWrapper .login input { width: 295px; display: block; margin: 10px auto; }
+
+.loginWrapper .login input.text { height: 35px; }
+
+.loginWrapper .login input.submitButton { border: none; height: 35px; font-size: 18px; border: 1px solid #f44747; transition: all .5s; background-color: transparent; }
+
+.loginWrapper .login input.submitButton:hover { background-color: #f44747; color: white; cursor: pointer; }
+
+.slick-prev, .slick-next { display: none !important; }
+
+.slick-dots li button:before { font-size: 36px; color: white !important; }
 
 @keyframes blink { 0% { opacity: 1; }
   50% { opacity: 0; }
   100% { opacity: 1; } }
+
+@media (max-width: 767px) { #itemWrapper .item { top: 35px; }
+  #itemWrapper .item .productImage { height: 50%; }
+  #itemWrapper .item .productImage .imagesWrapper { margin-top: 10px; }
+  #itemWrapper .item .productContent { height: 70%; } }
 
 /*# sourceMappingURL=main.css.map */

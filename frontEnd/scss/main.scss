@@ -1,0 +1,193 @@
+@import 'grid';
+@import 'fontAwesome/scss/font-awesome';
+@import 'scroll';
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600');
+@import url('https://fonts.googleapis.com/css?family=Dosis:400,500,600');
+
+
+@font-face {
+    font-family: bushcraft;
+    // src: url(../fonts/adampro.otf);
+    src: url(../fonts/Mohave-Bold.otf);
+}
+
+// $blue: #347bad;
+$blue: #f44747; // but it's really red lol right?????
+$darkRed: #ae3434; // should i say blue though lolololol
+$black: #454545;
+$green: #00ffae;
+
+.greenText{color: $green;}
+body{
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    background-color: #ffffff;
+background-image: url(https://www.transparenttextures.com/patterns/concrete-wall.png);
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+
+h1,h2,h3,h4{
+    margin: 0;
+    // font-family: 'Dosis', sans-serif;
+     font-family: bushcraft;
+}
+h1{
+    font-weight: 600;
+}
+h2,h3,h4{
+    font-weight: 300;
+}
+h1{font-size: 2.75em;}
+h2{font-size: 2em;}
+h3{font-size: 1.75em;}
+h4{font-size: 1.25em;}
+.button{
+    padding: 10px 20px;
+    color:white;
+    text-decoration: none;
+    transition: all .5s;
+    background: linear-gradient(to left, transparent 50%, $blue 50%);
+    background-size: 200% 100%;
+    background-position:right bottom;
+    border: 1px solid white;
+    position:relative;
+    top: 25px;
+    &:hover{
+        background-position:left bottom;
+    }
+}
+.maxWidthWrap{max-width: 420px; margin: 0 auto;}
+
+#mainWrapper{
+    overflow:hidden;
+    height: 100vh;
+    width: 100%;
+    background-color: $blue;
+    position:relative;
+    .header{
+        background-color: #ffffff;
+        background-image: url(https://www.transparenttextures.com/patterns/concrete-wall.png);
+        i{
+            padding: 20px;
+            float:left;
+        }
+        h1{
+            padding: 5px 0;
+        }
+    }
+    .imageWrapper{
+        margin-top: 25px;
+        background: $blue; /* Old browsers */
+        background: -moz-radial-gradient(center, ellipse cover, #f67979 0%, #f44747 100%); /* FF3.6-15 */
+        background: -webkit-radial-gradient(center, ellipse cover, #f67979 0%,#f44747 100%); /* Chrome10-25,Safari5.1-6 */
+        background: radial-gradient(ellipse at center, #f67979 0%,#f44747 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f67979', endColorstr='#f44747',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    }
+    .textWrapper{
+        overflow: scroll;
+        max-height: 25vh;
+    }
+    .socialHolder{
+        color:white;
+        float:right;
+        margin: 10px 15px;
+        i{
+            padding: 10px 10px;
+            font-size: 20px;
+        }
+    }
+    .title{
+        color:white;
+        clear:both;
+        padding-left: 15px;
+    }
+    .divider{
+        height: 3px;
+        width: 100px;
+        margin-left: 15px;
+        background-color: white;
+        margin-bottom: 10px;
+    }
+    .shadow{
+        outline: 1px solid #f67979;
+        border: 1px solid $blue;
+    }
+    .content{
+        color:white;
+        padding: 0 15px;
+        p{margin-top: 0;}
+    }
+    #overlay{
+        text-align: center;
+        color:white;
+        position:absolute;
+        height: 100vh;
+        width: 100%;
+        background-color: #ae3434;
+background-image: url(https://www.transparenttextures.com/patterns/light-aluminum.png);
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+// background-color: #ae3434;
+// background-image: url(https://www.transparenttextures.com/patterns/micro-carbon.png);
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+background-color: #ae3434;
+background-image: url(https://www.transparenttextures.com/patterns/white-diamond-dark.png);
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+        z-index: 10;
+        // top: 0;
+        bottom: -90vh;
+        left: 0;
+        border-radius: 200px 200px 0 0;
+        transition: all 2s;
+        .innerBorder{
+            margin: auto;
+            position: absolute;
+            top: 0; left: 0; bottom: 0; right: 0;
+            width: 95%;
+            height: 95%;
+            border-radius: 200px 200px 0 0;
+            border: 2px solid #e7e55e;
+        }
+        .overlayContent{
+            height: 100%;
+            width: 100%;
+            display:table;
+        }
+        .shopInfo{
+            display:table-cell;
+            vertical-align: middle;
+            h1{
+                margin-bottom: 15px;
+            }
+            div, a{
+                font-size: 32px;
+            }
+        }
+        i{
+            font-size: 28px;
+            position:relative;
+            top: 25px;
+            transition: all 1s;
+            z-index: 35;
+        }
+    }
+    #overlay.open{
+        bottom: 0;
+        i{
+            transform: rotate(45deg);
+        }
+    }
+}
+
+
+
+//slick overriders
+.slick-prev, .slick-next{
+    display:none !important;
+}
+
+.slick-dots li button:before{
+    font-size: 36px;
+    color:white !important;
+}
