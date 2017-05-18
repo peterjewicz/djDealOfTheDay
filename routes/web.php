@@ -16,12 +16,12 @@ Route::get('/login', function () {
 });
 Route::post('/login', 'authController@login');
 
-Route::get('/register', function () {
-    $user = new User;
-    $user->username = 'josh';
-    $user->password = Hash::make('a7x8gg3TY1!');
-    $user->save();
-});
+// Route::get('/register', function () {
+//     $user = new User;
+//     $user->username = 'josh';
+//     $user->password = Hash::make('a7x8gg3TY1!');
+//     $user->save();
+// });
 
 
 
