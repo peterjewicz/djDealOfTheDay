@@ -28,6 +28,6 @@ class HomeController extends Controller
     public function mobile(){
         $deal = DB::table('deals')->orderBy('id', 'desc')->first();
         $deal->images = explode ( ',' , $deal->images ); // break apart the images into an array for display loop
-        return json_encode($deal));
+        return json_encode($deal);
     }
 }
