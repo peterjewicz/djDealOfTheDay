@@ -1596,7 +1596,7 @@ body, html { margin: 0; }
 
 body { font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 300; background-color: #ffffff; background-image: url(https://www.transparenttextures.com/patterns/concrete-wall.png); /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */ }
 
-.greenText { color: #00ffae; border-bottom: 1px solid white; }
+.greenText { color: #399b1b; border-bottom: 1px solid white; font-weight: 400; }
 
 @media (min-width: 767px) { body { font-size: 16px; } }
 
@@ -1614,9 +1614,31 @@ h3 { font-size: 2.25em; }
 
 h4 { font-size: 1.5em; }
 
-.button { padding: 10px 20px; color: white; text-decoration: none; transition: all .5s; background: linear-gradient(to left, transparent 50%, #f44747 50%); background-size: 200% 100%; background-position: right bottom; }
+.button { padding: 10px 20px; color: white; text-decoration: none; transition: all .5s; background: linear-gradient(to left, transparent 50%, #f49847 50%); background-size: 200% 100%; background-position: right bottom; }
 
 .button:hover { background-position: left bottom; }
+
+.overlay { position: fixed; top: 0; left: 0; height: 100%; width: 100%; z-index: 0; opacity: 0; background-color: rgba(0, 0, 0, 0.65); transition: opacity .5s; }
+
+.overlay .overlayInner { width: 360px; height: 220px; padding: 10px; border: 1px solid white; margin: auto; position: absolute; top: 0; left: 0; bottom: 0; right: 0; background-color: #707070; }
+
+.overlay .overlayInner h3, .overlay .overlayInner p { color: white; text-align: center; }
+
+.overlay .overlayInner h3 { font-size: 1.8em; }
+
+.overlay .overlayInner input { width: 280px; margin: 10px auto; display: block; }
+
+.overlay .overlayInner .email { height: 25px; }
+
+.overlay .overlayInner .submit { background-color: #69c24e; border: 1px solid white; color: white; transition: all .5s; cursor: pointer; height: 30px; }
+
+.overlay .overlayInner .submit:hover { background-color: #2d9a0c; }
+
+.overlay .overlayInner i { position: absolute; top: 0px; right: 0px; color: white; font-size: 1.25rem; transition: color .5s; cursor: pointer; }
+
+.overlay .overlayInner i:hover { color: #d21212; }
+
+.overlay.active { z-index: 50; opacity: 1; }
 
 #header { height: 100vh; width: 100%; background-image: url("../images/mainBg.jpg"); background-size: cover; color: white; display: table; position: relative; }
 
@@ -1636,11 +1658,11 @@ h4 { font-size: 1.5em; }
 
 #itemWrapper .item .productImage .imagesWrapper { margin-top: 25%; }
 
-#itemWrapper .item .productContent { height: 100%; display: table; color: white; padding-left: 15px; padding-right: 15px; /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#8cc1e9+1,347bad+100 */ /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f67979+0,f44747+100 */ background: #f44747; /* Old browsers */ background: -moz-radial-gradient(center, ellipse cover, #f67979 0%, #f44747 100%); /* FF3.6-15 */ background: -webkit-radial-gradient(center, ellipse cover, #f67979 0%, #f44747 100%); /* Chrome10-25,Safari5.1-6 */ background: radial-gradient(ellipse at center, #f67979 0%, #f44747 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f67979', endColorstr='#f44747',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */ }
+#itemWrapper .item .productContent { height: 100%; display: table; color: white; padding-left: 15px; padding-right: 15px; /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fabd86+1,f49847+100 */ background: #fabd86; /* Old browsers */ background: -moz-radial-gradient(center, ellipse cover, #fabd86 1%, #f49847 100%); /* FF3.6-15 */ background: -webkit-radial-gradient(center, ellipse cover, #fabd86 1%, #f49847 100%); /* Chrome10-25,Safari5.1-6 */ background: radial-gradient(ellipse at center, #fabd86 1%, #f49847 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fabd86', endColorstr='#f49847',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */ }
 
 #itemWrapper .item .productContent .divider { height: 3px; width: 100px; background-color: white; margin-bottom: 10px; }
 
-#itemWrapper .item .productContent .scrollerShadow { outline: 1px solid #f67979; border: 1px solid #f44747; }
+#itemWrapper .item .productContent .scrollerShadow { outline: 1px solid #fabd86; border: 1px solid #f49847; }
 
 #itemWrapper .item .productContent .textWrapper { color: white; max-height: 150px; overflow: scroll; padding: 5px; }
 
@@ -1656,7 +1678,7 @@ h4 { font-size: 1.5em; }
 
 .loginWrapper .login { width: 320px; height: 200px; margin: auto; position: absolute; top: 0; left: 0; bottom: 0; right: 0; background-color: white; }
 
-.loginWrapper .login .loginHeader { padding: 10px 0; color: white; text-align: center; background-color: #f44747; }
+.loginWrapper .login .loginHeader { padding: 10px 0; color: white; text-align: center; background-color: #f49847; }
 
 .loginWrapper .login .loginHeader h4 { margin: 0; }
 
@@ -1664,9 +1686,9 @@ h4 { font-size: 1.5em; }
 
 .loginWrapper .login input.text { height: 35px; }
 
-.loginWrapper .login input.submitButton { border: none; height: 35px; font-size: 18px; border: 1px solid #f44747; transition: all .5s; background-color: transparent; }
+.loginWrapper .login input.submitButton { border: none; height: 35px; font-size: 18px; border: 1px solid #f49847; transition: all .5s; background-color: transparent; }
 
-.loginWrapper .login input.submitButton:hover { background-color: #f44747; color: white; cursor: pointer; }
+.loginWrapper .login input.submitButton:hover { background-color: #f49847; color: white; cursor: pointer; }
 
 .slick-prev, .slick-next { display: none !important; }
 

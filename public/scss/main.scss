@@ -13,9 +13,9 @@
 }
 
 // $blue: #347bad;
-$blue: #f44747; // but it's really red lol right?????
+$blue: #f49847; // but it's really red lol right?????
 $black: #454545;
-$green: #00ffae;
+$green: #399b1b;
 
 body{
     font-family: 'Poppins', sans-serif;
@@ -30,6 +30,7 @@ background-image: url(https://www.transparenttextures.com/patterns/concrete-wall
 .greenText{
     color: $green;
     border-bottom: 1px solid white;
+    font-weight: 400;
 }
 
 
@@ -66,6 +67,66 @@ h4{font-size: 1.5em;}
     &:hover{
         background-position:left bottom;
     }
+}
+
+.overlay{
+    position:fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+    opacity: 0;
+    background-color: rgba(0,0,0,.65);
+    transition: opacity .5s;
+    .overlayInner{
+        width: 360px;
+        height: 220px;
+        padding: 10px;
+        border: 1px solid white;
+        margin: auto;
+        position: absolute;
+        top: 0; left: 0; bottom: 0; right: 0;
+        background-color: #707070;
+        h3,p{color:white; text-align: center;}
+        h3{font-size: 1.8em;}
+        input{
+            width: 280px;
+            margin: 10px auto;
+            display:block;
+        }
+        .email{
+            height: 25px;
+        }
+        .submit{
+            background-color: #69c24e;
+            border: 1px solid white;
+            color:white;
+            transition: all .5s;
+            cursor:pointer;
+            height: 30px;
+            &:hover{
+                background-color: #2d9a0c;
+            }
+        }
+        i{
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            color:white;
+            font-size: 1.25rem;
+            transition: color .5s;
+            cursor:pointer;
+            &:hover{
+                color:#d21212;
+            }
+        }
+    }
+}
+
+.overlay.active{
+    z-index: 50;
+    opacity: 1;
 }
 
 #header{
@@ -147,22 +208,16 @@ h4{font-size: 1.5em;}
             color:white;
             padding-left: 15px;
             padding-right: 15px;
-            /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#8cc1e9+1,347bad+100 */
-            // background: $blue; /* Old browsers */
-            // background: -moz-radial-gradient(center, ellipse cover, #8cc1e9 1%, #347bad 100%); /* FF3.6-15 */
-            // background: -webkit-radial-gradient(center, ellipse cover, #8cc1e9 1%,#347bad 100%); /* Chrome10-25,Safari5.1-6 */
-            // background: radial-gradient(ellipse at center, #8cc1e9 1%,#347bad 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-            // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8cc1e9', endColorstr='#347bad',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-            /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f67979+0,f44747+100 */
-            background: $blue; /* Old browsers */
-            background: -moz-radial-gradient(center, ellipse cover, #f67979 0%, #f44747 100%); /* FF3.6-15 */
-            background: -webkit-radial-gradient(center, ellipse cover, #f67979 0%,#f44747 100%); /* Chrome10-25,Safari5.1-6 */
-            background: radial-gradient(ellipse at center, #f67979 0%,#f44747 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f67979', endColorstr='#f44747',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+            /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fabd86+1,f49847+100 */
+            background: #fabd86; /* Old browsers */
+            background: -moz-radial-gradient(center, ellipse cover, #fabd86 1%, #f49847 100%); /* FF3.6-15 */
+            background: -webkit-radial-gradient(center, ellipse cover, #fabd86 1%,#f49847 100%); /* Chrome10-25,Safari5.1-6 */
+            background: radial-gradient(ellipse at center, #fabd86 1%,#f49847 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fabd86', endColorstr='#f49847',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
             .scrollerShadow{
                 // box-shadow:        inset  0  8px 8px -8px $black,
                 //                    inset  0 -8px 8px -8px $black;
-                outline: 1px solid #f67979;
+                outline: 1px solid #fabd86;
                 border: 1px solid $blue;
             }
             .textWrapper{

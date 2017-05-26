@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Chicago Deal of The Day</title>
+        <title>DJ Deal of The Day</title>
 
         <!-- Fonts -->
         <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
@@ -13,6 +13,20 @@
         <link href="css/main.css" rel="stylesheet" type="text/css">
     </head>
     <body>
+        <div class="overlay">
+            <div class="overlayInner">
+                <i class="fa fa-window-close closePopup" aria-hidden="true"></i>
+                <h3>Get Email Alerts on New Items</h3>
+                <p>Sign up with just your email and get alerts when we
+                    add new items. Make sure you're the first two know
+                    on our limited stock deals
+                </p>
+                <form action="#" method="post">
+                    <input type="text" class="email" name="email" placeholder="Email" />
+                    <input type="submit" class="submit" value="Submit" />
+                </form>
+            </div>
+        </div>
         <div id="mainWrapper">
             <div id="header">
                 <div class="headerContent">
@@ -21,7 +35,7 @@
                         Directly To Your Inbox Or Phone
                     </h2>
                     <a href="#" class="button">Get The App</a>
-                    <a href="#" class="button">Email Me Deals</a>
+                    <a href="#" class="button emailDeal">Email Me Deals</a>
                 </div>
                 <div class="downWard">
                     <h4>Scroll For Today's Deal</h4>
@@ -73,6 +87,15 @@
                 dots: true,
                 autoplay: true,
                 autoplaySpeed: 4000,
+            });
+
+            jQuery('.emailDeal').click(function(){
+                event.preventDefault();
+                $('.overlay').addClass('active');
+            })
+
+            jQuery('.closePopup').click(function(){
+                $('.overlay').removeClass('active');
             });
         });
         </script>
